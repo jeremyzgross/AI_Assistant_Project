@@ -1,4 +1,5 @@
-import express, { Request, Response, NextFunction } from 'express'
+import express from 'express'
+import { router } from './3_Routes/test'
 import cors from 'cors'
 import dotenv from 'dotenv'
 
@@ -12,4 +13,9 @@ app.use(cors()) // Allow requests from all origins
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
+// Routes
+app.use('/api', router)
 
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`)
+})
