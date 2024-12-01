@@ -1,5 +1,5 @@
 import express from 'express'
-import { router } from './3_Routes/test'
+import { router } from './3_Routes/routes.test'
 import cors from 'cors'
 import dotenv from 'dotenv'
 
