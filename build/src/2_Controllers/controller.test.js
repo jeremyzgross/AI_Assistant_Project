@@ -16,7 +16,11 @@ const test = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const result = yield (0, model_test_1._test)(userId, sessionNumber);
         if (result) {
-            res.status(200).send('User session added successfully');
+            // res.status(200).send('User session added successfully')
+            res.json({
+                message: 'User session added successfully',
+                session_date: result.rows[0].session_date,
+            });
         }
     }
     catch (error) {

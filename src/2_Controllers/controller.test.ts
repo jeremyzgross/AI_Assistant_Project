@@ -6,7 +6,11 @@ export const test = async (req: Request, res: Response) => {
   try {
     const result = await _test(userId, sessionNumber)
     if (result) {
-      res.status(200).send('User session added successfully')
+      // res.status(200).send('User session added successfully')
+      res.json({
+        message: 'User session added successfully',
+        session_date: result.rows[0].session_date,
+      })
     }
   } catch (error) {
     res.status(500).send('Error adding user session')

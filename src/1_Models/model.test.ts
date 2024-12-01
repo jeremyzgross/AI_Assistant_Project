@@ -17,7 +17,7 @@ import db from '../0_Config/config'
 export const _test = async (userId: string, sessionNumber: number) => {
   try {
     const result = await db.raw(
-      `INSERT INTO user_sessions(user_id, session_date, session_number) VALUES('${userId}', NOW(), ${sessionNumber})`
+      `INSERT INTO user_sessions(user_id, session_date, session_number) VALUES('${userId}', NOW(), ${sessionNumber}) RETURNING session_date`
     )
     console.log('User session added:', result)
     return result

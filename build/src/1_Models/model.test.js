@@ -29,7 +29,7 @@ const config_1 = __importDefault(require("../0_Config/config"));
 // }
 const _test = (userId, sessionNumber) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const result = yield config_1.default.raw(`INSERT INTO user_sessions(user_id, session_date, session_number) VALUES('${userId}', NOW(), ${sessionNumber})`);
+        const result = yield config_1.default.raw(`INSERT INTO user_sessions(user_id, session_date, session_number) VALUES('${userId}', NOW(), ${sessionNumber}) RETURNING session_date`);
         console.log('User session added:', result);
         return result;
     }
