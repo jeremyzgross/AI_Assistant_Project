@@ -15,8 +15,11 @@
   "devDependencies": {
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.1",
+    "@types/pdf-parse": "^1.1.4",
     "concurrently": "^9.1.0",
     "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.7.2"
   },
   "dependencies": {
@@ -29,6 +32,7 @@
     "multer": "^1.4.5-lts.1",
     "openai": "^4.73.1",
     "path": "^0.12.7",
+    "pdf-parse": "^1.1.1",
     "pg": "^8.13.1",
     "postgres": "^3.4.5"
   }

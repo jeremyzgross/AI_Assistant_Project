@@ -22,17 +22,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AICallTest = void 0;
 const openai_1 = __importDefault(require("openai"));
 const dotenv_1 = __importDefault(require("dotenv"));
+const service_pdftotext_1 = require("./service.pdftotext");
 dotenv_1.default.config();
 const openai = new openai_1.default({
     apiKey: process.env.OPENAI_API_KEY,
     baseURL: 'https://integrate.api.nvidia.com/v1',
 });
+const resume = (0, service_pdftotext_1.pdfParseService)();
 const AICallTest = (prompt) => __awaiter(void 0, void 0, void 0, function* () {
     var _a, e_1, _b, _c;
     var _d, _e;
+    const resume = yield (0, service_pdftotext_1.pdfParseService)();
+    const contentAndResume = prompt + resume;
     const stream = yield openai.chat.completions.create({
-        model: "meta/llama-3.1-405b-instruct",
-        messages: [{ role: 'user', content: prompt }],
+        model: 'meta/llama-3.1-405b-instruct',
+        messages: [{ role: 'user', content: contentAndResume }],
         stream: true,
         max_tokens: 100,
     });

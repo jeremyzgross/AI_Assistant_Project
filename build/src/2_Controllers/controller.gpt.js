@@ -12,10 +12,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.gpt = void 0;
 const service_gpt_1 = require("../6_Services/service.gpt");
 const gpt = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { prompt } = req.body;
+    let { prompt } = req.body;
     try {
         const response = yield (0, service_gpt_1.AICallTest)(prompt);
-        res.json({ response });
+        res.json({ prompt, response });
+        console.log('GPT request', prompt);
         console.log('GPT response', response);
     }
     catch (error) {
