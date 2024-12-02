@@ -33,6 +33,7 @@ export const pdfParseService = async () => {
   console.log(filePath)
 
   try {
+    // Check if the file exists. Currently not finding file with path.join
     if (fs.existsSync(filePath)) {
       console.log('File exists')
       const dataBuffer = await fs.promises.readFile(filePath) 
