@@ -28,7 +28,6 @@ const openai = new openai_1.default({
     apiKey: process.env.OPENAI_API_KEY,
     baseURL: 'https://integrate.api.nvidia.com/v1',
 });
-const resume = (0, service_pdftotext_1.pdfParseService)();
 const AICallTest = (prompt) => __awaiter(void 0, void 0, void 0, function* () {
     var _a, e_1, _b, _c;
     var _d, _e;

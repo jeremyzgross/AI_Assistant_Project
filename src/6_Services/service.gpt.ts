@@ -7,7 +7,6 @@ const openai = new OpenAI({
   baseURL: 'https://integrate.api.nvidia.com/v1',
 })
 
-const resume = pdfParseService()
 
 export const AICallTest = async (prompt: string) => {
   const resume = await pdfParseService()
