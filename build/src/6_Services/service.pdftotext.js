@@ -15,8 +15,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.pdfParseService = void 0;
 const pdf_parse_1 = __importDefault(require("pdf-parse"));
 const fs_1 = __importDefault(require("fs"));
-const pdfParseService = () => __awaiter(void 0, void 0, void 0, function* () {
-    const filePath = '/Users/jeremyzgross/AI Projects/AI_Assistant_Project/src/upload/JeremyGross_DI_UNI_CV.pdf';
+//PDF Parser
+const pdfParseService = (filePath) => __awaiter(void 0, void 0, void 0, function* () {
     console.log('Checking file path:', filePath);
     try {
         if (fs_1.default.existsSync(filePath)) {

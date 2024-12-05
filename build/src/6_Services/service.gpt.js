@@ -22,16 +22,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AICallTest = void 0;
 const openai_1 = __importDefault(require("openai"));
 const dotenv_1 = __importDefault(require("dotenv"));
-const service_pdftotext_1 = require("./service.pdftotext");
+const service_upload_1 = require("./service.upload");
 dotenv_1.default.config();
 const openai = new openai_1.default({
     apiKey: process.env.OPENAI_API_KEY,
     baseURL: 'https://integrate.api.nvidia.com/v1',
 });
-const AICallTest = (prompt) => __awaiter(void 0, void 0, void 0, function* () {
+// const uploadedResume = '/Users/jeremyzgross/AI Projects/AI_Assistant_Project/src/upload/JeremyGross_DI_UNI_CV.pdf'
+const uploadedResume = service_upload_1.upload.single('resume');
+const AICallTest = (prompt, resume) => __awaiter(void 0, void 0, void 0, function* () {
     var _a, e_1, _b, _c;
     var _d, _e;
-    const resume = yield (0, service_pdftotext_1.pdfParseService)();
     const contentAndResume = prompt + resume;
     const stream = yield openai.chat.completions.create({
         model: 'meta/llama-3.1-405b-instruct',

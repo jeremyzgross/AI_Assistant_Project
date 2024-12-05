@@ -1,10 +1,9 @@
 import pdf from 'pdf-parse'
 import fs from 'fs'
 
-export const pdfParseService = async () => {
-  const filePath = '/Users/jeremyzgross/AI Projects/AI_Assistant_Project/src/upload/JeremyGross_DI_UNI_CV.pdf'
+//PDF Parser
+export const pdfParseService = async (filePath: string) => {
   console.log('Checking file path:', filePath)
-
   try {
     if (fs.existsSync(filePath)) {
       console.log('File exists, reading...')

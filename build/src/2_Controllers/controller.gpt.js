@@ -11,10 +11,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.gpt = void 0;
 const service_gpt_1 = require("../6_Services/service.gpt");
+const service_pdftotext_1 = require("../6_Services/service.pdftotext");
 const gpt = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let { prompt } = req.body;
+    let filePath = req.file.path;
     try {
-        const response = yield (0, service_gpt_1.AICallTest)(prompt);
+        const pdfText = yield (0, service_pdftotext_1.pdfParseService)(filePath);
+        const response = yield (0, service_gpt_1.AICallTest)(prompt, pdfText);
         res.json({ prompt, response });
         console.log('GPT request', prompt);
         console.log('GPT response', response);
