@@ -1,8 +1,8 @@
-import db from '../0_Config/config'
 import express, { Request, Response, NextFunction } from 'express'
 
 import { AICallTest } from '../6_Services/service.gpt'
 import { pdfParseService } from '../6_Services/service.pdftotext'
+import { deleteFile } from '../6_Services/service.upload'
 
 export const gpt = async (req: Request, res: Response) => {
   let { prompt } = req.body
@@ -16,5 +16,7 @@ export const gpt = async (req: Request, res: Response) => {
   } catch (error) {
     res.status(500).send('Error calling GPT')
     console.error('Error calling GPT', error)
+  } finally {
+    deleteFile(filePath)
   }
 }

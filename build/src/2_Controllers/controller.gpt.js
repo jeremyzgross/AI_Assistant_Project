@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.gpt = void 0;
 const service_gpt_1 = require("../6_Services/service.gpt");
 const service_pdftotext_1 = require("../6_Services/service.pdftotext");
+const service_upload_1 = require("../6_Services/service.upload");
 const gpt = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let { prompt } = req.body;
     let filePath = req.file.path;
@@ -25,6 +26,9 @@ const gpt = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     catch (error) {
         res.status(500).send('Error calling GPT');
         console.error('Error calling GPT', error);
+    }
+    finally {
+        (0, service_upload_1.deleteFile)(filePath);
     }
 });
 exports.gpt = gpt;
