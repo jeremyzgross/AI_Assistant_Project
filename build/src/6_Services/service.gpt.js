@@ -28,7 +28,6 @@ const openai = new openai_1.default({
     apiKey: process.env.OPENAI_API_KEY,
     baseURL: 'https://integrate.api.nvidia.com/v1',
 });
-// const uploadedResume = '/Users/jeremyzgross/AI Projects/AI_Assistant_Project/src/upload/JeremyGross_DI_UNI_CV.pdf'
 const uploadedResume = service_upload_1.upload.single('resume');
 const AICallTest = (prompt, resume) => __awaiter(void 0, void 0, void 0, function* () {
     var _a, e_1, _b, _c;

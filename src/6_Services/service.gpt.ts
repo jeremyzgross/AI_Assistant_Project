@@ -9,7 +9,7 @@ const openai = new OpenAI({
   baseURL: 'https://integrate.api.nvidia.com/v1',
 })
 
-// const uploadedResume = '/Users/jeremyzgross/AI Projects/AI_Assistant_Project/src/upload/JeremyGross_DI_UNI_CV.pdf'
+
 
 const uploadedResume = upload.single('resume')
 
