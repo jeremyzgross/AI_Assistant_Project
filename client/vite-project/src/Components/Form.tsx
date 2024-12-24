@@ -2,7 +2,9 @@ import { useState } from 'react'
 import axios from 'axios'
 import CircularProgress from '@mui/material/CircularProgress'
 
-const URL = 'http://localhost:3000/api/gpt'
+//local and production variable changes
+// const URL = 'http://localhost:3000/api/gpt'
+const URL = 'https://ai-assistant-project-backend.onrender.com/api/gpt'
 
 function Form() {
   const [file, setFile] = useState<File | null>(null)
