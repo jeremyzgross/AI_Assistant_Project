@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const routes_test_1 = require("./3_Routes/routes.test");
+// import { router as testRouter } from './3_Routes/routes.test'
 const routes_gpt_1 = require("./3_Routes/routes.gpt");
 const cors_1 = __importDefault(require("cors"));
 const app = (0, express_1.default)();
@@ -15,7 +15,7 @@ app.use((0, cors_1.default)()); // Allow requests from all origins
 app.use(express_1.default.urlencoded({ extended: true }));
 app.use(express_1.default.json());
 // Routes
-app.use('/api', routes_test_1.router);
+// app.use('/api', testRouter)
 app.use('/api', routes_gpt_1.router);
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);

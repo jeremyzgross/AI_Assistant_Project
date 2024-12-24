@@ -6,9 +6,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteFile = exports.upload = void 0;
 const multer_1 = __importDefault(require("multer"));
 const fs_1 = __importDefault(require("fs"));
-const uploadPath = '/Users/jeremyzgross/AI Projects/AI_Assistant_Project/src/upload/';
+// const uploadPath = '/Users/jeremyzgross/AI Projects/AI_Assistant_Project/src/upload/'
 exports.upload = (0, multer_1.default)({
-    dest: uploadPath,
+    dest: 'upload/',
     limits: { fileSize: 1000 * 1024 * 1024 },
 });
 const deleteFile = (uploadPath) => {
