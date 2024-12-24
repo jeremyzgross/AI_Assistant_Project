@@ -8,9 +8,9 @@
     "backend": "concurrently \"tsc -w\" \"nodemon build/src/server.js\"",
     "frontend": "cd Frontend/vite-project && npm run dev",
     "start:production": "node build/src/server.js",
-    "install:all": "cd Frontend/vite-project && npm install && cd ../../ && npm install",
+    "install:all": "cd Frontend/vite-project && npm install",
     "build": "tsc",
-    "start": "concurrently \"npm run backend\" \"npm run frontend\" \"npm run install:all\"",
+    "start": "concurrently \"npm run install:all\" \"npm run backend\" \"npm run frontend\" ",
     "local": "concurrently \"npm run backend\" \"npm run frontend\""
   },
   "keywords": [],
