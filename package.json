@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "backend": "concurrently \"tsc -w\" \"nodemon build/src/server.js\"",
-    "frontend": "cd Frontend/vite-project && npm run dev",
+    "frontend": "cd Frontend/vite-project && npm run build",
     "start:production": "node build/src/server.js",
     "install:all": "cd Frontend/vite-project && npm install",
     "build": "tsc",
