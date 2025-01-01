@@ -39,18 +39,7 @@ function Form() {
 
   return (
     <>
-      <form
-        onSubmit={handleSubmit}
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: '20px',
-          border: '1px solid #ccc',
-          borderRadius: '5px',
-          boxShadow: '0 0 10px rgba(0,0,0,0.1)',
-        }}>
+      <form onSubmit={handleSubmit}>
         <h2 style={{ marginBottom: '20px' }}>Upload your resume</h2>
         <input
           type="file"
@@ -67,10 +56,11 @@ function Form() {
           style={{
             marginBottom: '20px',
             padding: '10px',
-            width: '100%',
+            width: '90%',
             height: '100px',
             border: '1px solid #ccc',
             borderRadius: '5px',
+            resize: 'none',
           }}
         />
         <button
